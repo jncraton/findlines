@@ -1,7 +1,7 @@
 all: test
 
-findline: findline.c
-	gcc findline.c -Wall -Wextra -o findline
+findlines: findlines.c
+	gcc $< -Wall -Wextra -o $@
 
-test: findline
-	cat belgic-confession.txt | ./findline Jesus | cmp belgic-jesus-lines.txt
+test: findlines
+	cat belgic-confession.txt | ./findlines Jesus | cmp belgic-jesus-lines.txt
