@@ -4,12 +4,12 @@
 
 char line[100];
 
-void search_stdin(char * search_query) {
+void search_file(FILE * file, char * search_query) {
   /**
-  Searches stdin for lines containt `search_query` and prints matching lines
+  Searches `file` for lines containing `search_query` and prints matching lines
   */
   
-  while (fgets(line, sizeof(line), stdin)) {
+  while (fgets(line, sizeof(line), file)) {
     if (strstr(line, search_query)) {
       printf("%s", line);
     }
@@ -22,5 +22,5 @@ int main(int argc, char ** argv) {
     exit(1);
   }
 
-  search_stdin(argv[1]);
+  search_file(stdin, argv[1]);
 }
