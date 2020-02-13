@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char line[100];
+char line[1000];
 
 void search_file(FILE * file, char * search_query) {
   /**
